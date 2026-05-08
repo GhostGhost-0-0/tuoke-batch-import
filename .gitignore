@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 构建产物
+dist/
+build/
+*.spec
+*.exe
+
+# 打包文件 (26MB+)
+*.zip
+
+# 日志
+*.log
+@AutomationLog.txt
+
+# 临时/缓存
+.claude/
+failed_category_links.txt
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
