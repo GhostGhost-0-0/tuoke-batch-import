@@ -98,7 +98,7 @@ class ShopHandler:
         name_map = {}
         for item in items:
             raw_name = getattr(item.element_info, "name", "").strip()
-            if raw_name and "(已封)" not in raw_name:
+            if raw_name and "(已封)" not in raw_name and "（已封）" not in raw_name:
                 name_map[raw_name] = raw_name
         return name_map
 
@@ -118,6 +118,7 @@ class ShopHandler:
             if (
                 item_name
                 and "(已封)" not in item_name
+                and "（已封）" not in item_name
                 and kw in item_name
                 and item_name not in seen
             ):
@@ -145,7 +146,7 @@ class ShopHandler:
         if not key:
             return 0
 
-        if "(已封)" in key:
+        if "(已封)" in key or "（已封）" in key:
             print(f"⏭️ 跳过已封店铺: {key}")
             return 0
 
